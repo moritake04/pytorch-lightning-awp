@@ -14,10 +14,6 @@ class TransformersModel(pl.LightningModule):
             self.backup = {}
             self.backup_eps = {}
             self.awp_accumulate_grad_batches = cfg["awp"]["accumulate_grad_batches"]
-            if cfg["awp"]["gradient_clip_val"] is not None:
-                self.awp_max_grad_norm = cfg["awp"]["gradient_clip_val"]
-            else:
-                self.awp_max_grad_norm = None
             self.awp_start_epoch = cfg["awp"]["start_epoch"]
 
 ########################################################################################
